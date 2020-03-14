@@ -1,0 +1,15 @@
+.column {
+    flex: auto;
+    flex-direction: row;
+    padding: 0 4px;
+    box-sizing: border-box;
+
+    height: auto;
+}
+
+.img {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    margin: 5px;
+}
