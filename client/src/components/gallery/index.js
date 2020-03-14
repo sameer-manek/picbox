@@ -62,7 +62,7 @@ class Gallery extends Component
 		data.append('photo', files[0])
 		console.log(file.type)
 
-		axios.post('http://localhost:5000/upload', data, {
+		axios.post('https://picbox-server.herokuapp.com/upload', data, {
 				headers: {
 					'Content-Type': file.type
 				}
@@ -71,7 +71,7 @@ class Gallery extends Component
 				let file = res.data
 				let images = this.state.images
 				let l = this.state.currentIndex + 1
-				images.unshift(<Thumbnail href={"http://localhost:5000/imgs/thumbnail/" + file} key={l} />)
+				images.unshift(<Thumbnail href={"https://picbox-server.herokuapp.com/imgs/thumbnail/" + file} key={l} />)
 				this.setState({
 					images,
 					currentIndex: l
@@ -137,11 +137,11 @@ class Gallery extends Component
 	async fetchImages ()
 	{
 		let urls = this.state.urls
-		await axios.get("http://localhost:5000/images").then(response => {
+		await axios.get("https://picbox-server.herokuapp.com/images").then(response => {
 			let files = response.data
 
 			files.forEach(file => {
-				urls.push("http://localhost:5000/imgs/thumbnail/" + file)
+				urls.push("https://picbox-server.herokuapp.com/imgs/thumbnail/" + file)
 			});
 
 			this.setState({
