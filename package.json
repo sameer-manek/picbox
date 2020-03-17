@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "setup": "mkdir upload | mkdir upload/{raw,compressed,thumbnail} | npm install | cd client && npm install",
+    "setup": "mkdir upload | mkdir upload/raw && mkdir upload/compressed && mkdir upload/thumbnail | npm install | cd client && npm install",
     "build": "cd client && npm run build",
     "start": "node index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
